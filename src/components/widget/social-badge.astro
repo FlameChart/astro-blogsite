@@ -1,0 +1,9 @@
+---
+const {platform, text, link} = Astro.props
+---
+
+<a href={`${link}`}>
+    <div class="flex flex-row flex-wrap rounded-lg bg-teal-300">
+        <p>{`${platform}: ${text}`}</p>
+    </div>
+</a>

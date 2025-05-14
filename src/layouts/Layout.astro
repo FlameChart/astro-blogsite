@@ -3,22 +3,28 @@ import ClientRouter from "astro/components/ClientRouter.astro";
 
 import "../styles/global.css";
 
-const { pageName } = Astro.props;
+const {pageTitle} = Astro.props;
+let titleWrapped;
+if(pageTitle === undefined) {
+    titleWrapped = "welki's ship";
+} else {
+    titleWrapped = pageTitle + " - welki's ship";
+}
 ---
 
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="generator" content={Astro.generator} />
-        <title>{`${pageName} - welki's ship`}</title>
-        <ClientRouter />
-    </head>
-    <body>
-        <slot />
-    </body>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+    <meta name="generator" content={Astro.generator}/>
+    <title>{`${titleWrapped}`}</title>
+    <ClientRouter/>
+</head>
+<body>
+<slot/>
+</body>
 </html>
 
 <style>

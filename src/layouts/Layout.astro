@@ -2,10 +2,12 @@
 import ClientRouter from "astro/components/ClientRouter.astro";
 
 import "../styles/global.css";
+import HeaderBar from "../components/HeaderBar.astro";
+import Footer from "../components/Footer.astro";
 
 const {pageTitle} = Astro.props;
 let titleWrapped;
-if(pageTitle === undefined) {
+if (pageTitle === undefined) {
     titleWrapped = "welki's ship";
 } else {
     titleWrapped = pageTitle + " - welki's ship";
@@ -23,7 +25,9 @@ if(pageTitle === undefined) {
     <ClientRouter/>
 </head>
 <body class="min-h-screen">
-<slot/>
+    <HeaderBar/>
+    <slot/>
+    <Footer/>
 </body>
 </html>
 

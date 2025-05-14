@@ -1,9 +1,38 @@
 ---
+import TextLink from "./widget/TextLink.astro";
 ---
 
 <footer>
-    <p>
-        Hello, so here is the footer element. and I'll change this to a modern
-        one later. :)
-    </p>
+    <div id="footer" class="w-full h-96 px-36 py-9 rounded-t-4xl backdrop-blur-xl">
+        <div id="footer-container" class="flex flex-warp flex-row h-72 gap-8 justify-around">
+            <div id="naming-section" class="text-end h-72 w-1/4">
+                <p class="font-mono font-bold text-2xl">welki's space</p>
+                <span>a casual guy who's trying to writing code and dreaming to become a cool designer / freelancer and coder.</span>
+            </div>
+            <div id="nav-section" class="pt-2">
+                <p class="font-mono font-bold text-xl">What we have</p>
+                <TextLink src="/" text="Home"/>
+                <TextLink src="/blog" text="Blog"/>
+                <TextLink src="/projects" text="Projects"/>
+                <TextLink src="/about" text="About"/>
+            </div>
+            <div id="friend-link" class="pt-2">
+                <p class="font-mono font-bold text-xl">Friends Link</p>
+                there has nothing...
+            </div>
+            <div id="badge-section" class="flex flex-wrap flex-row-reverse justify-end">
+
+            </div>
+        </div>
+        <div id="footer-desc" class="flex flex-wrap justify-center">
+            <span>Hosting on GitHub, Building with Astro.</span>
+        </div>
+    </div>
 </footer>
+
+<style>
+    #footer {
+        background-color: #eeeeee33;
+        border-top: 1px solid #eeeeee;
+    }
+</style>

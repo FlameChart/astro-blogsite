@@ -3,29 +3,28 @@ import TextLink from "./widget/TextLink.astro";
 import IconLink from "./widget/IconLink.astro";
 ---
 
-<div id="header" class="sticky top-0 left-0">
-    <div id="header-bar" class="w-full h-16 flex flex-warp flex-row justify-between backdrop-blur-xl">
-        <div id="nav-items" class="flex flex-warp flex-row gap-3 ml-12 w-2/7">
-            <TextLink src="/" text="Home" />
-            <TextLink src="/blog" text="Random Blogs" />
-            <TextLink src="/projects" text="My Projects" />
-            <TextLink src="/about" text="About Me" />
-        </div>
-        <div
-            id="hero"
-            class="flex flex-wrap items-center justify-center font-mono font-bold text-2xl"
-        >
-            welki's space
-        </div>
-        <div id="social-link" class="flex flex-warp flex-row-reverse gap-4 mr-12 w-2/7">
-            <IconLink src="https://github.com/flamechart" platform="github" />
+<header>
+    <div id="header" class="sticky top-0 left-0 rounded-b-4xl backdrop-blur-xl">
+        <div id="header-container" class="w-full h-16 flex flex-warp flex-row justify-between">
+            <div id="nav-items" class="flex flex-warp flex-row gap-3 ml-12 w-2/7">
+                <TextLink src="/" text="Home"/>
+                <TextLink src="/blog" text="Random Blogs"/>
+                <TextLink src="/projects" text="My Projects"/>
+                <TextLink src="/about" text="About Me"/>
+            </div>
+            <div id="hero" class="flex flex-wrap items-center justify-center font-mono font-bold text-2xl">
+                welki's space
+            </div>
+            <div id="social-link" class="flex flex-warp flex-row-reverse gap-4 mr-12 w-2/7">
+                <IconLink src="https://github.com/flamechart" platform="github"/>
+            </div>
         </div>
     </div>
-</div>
+</header>
 
 <style>
     #header {
         background-color: #eeeeee33;
-        border-bottom: 1px solid white;
+        border-bottom: 1px solid #eeeeee;
     }
 </style>

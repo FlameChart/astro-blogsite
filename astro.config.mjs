@@ -15,7 +15,11 @@ export default defineConfig({
 
     integrations: [mdx(), sitemap(), react()],
     i18n: {
-        locales: ["en", "zh-CN"],
-        defaultLocale: "en",
+        locales: ["en", "zh"],
+        defaultLocale: "zh",
+        routing: {
+            prefixDefaultLocale: false,
+            redirectToDefaultLocale: true,
+        }
     },
 });

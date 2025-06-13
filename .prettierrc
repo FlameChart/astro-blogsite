@@ -1,5 +1,10 @@
 {
-    "plugins": ["prettier-plugin-astro"],
+    "trailingComma": "es5",
+    "tabWidth": 4,
+    "printWidth": 120,
+    "semi": true,
+    "bracketSpacing": true,
+    "plugins": ["prettier-plugin-astro", "prettier-plugin-tailwindcss"],
     "overrides": [
         {
             "files": "*.astro",

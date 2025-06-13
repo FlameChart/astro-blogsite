@@ -1,0 +1,49 @@
+---
+import '../styles/global.css'
+import {ModeToggle} from "../components/ModeToggle";
+
+import {ScrollArea} from "../components/ui/scroll-area";
+
+const {title, description} = Astro.props;
+
+// processing the title
+let titleStyled = title;
+if (titleStyled) {
+    titleStyled += " - welki's space"
+} else {
+    titleStyled = "welki's space";
+}
+---
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="x-ua-compatible"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content={Astro.generator}/>
+    <title>{titleStyled}</title>
+    <meta name="description" content={description}/>
+</head>
+<body>
+<div id="header" class="border-b-1 border-dashed">
+    <ModeToggle client:load/>
+</div>
+<div id="container" class="min-h-[70vh] sm:w-full md:w-lg lg:w-3xl xl:w-4xl 2xl:w-6xl transition-all mx-auto border-dashed border-l-1 border-r-1 p-2">
+    <slot/>
+</div>
+<div id="footer" class="border-t-1 border-dashed">
+
+</div>
+</body>
+</html>
+
+<style>
+    #header {
+        padding: 1em;
+        width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-between;
+        align-content: center;
+    }
+</style>

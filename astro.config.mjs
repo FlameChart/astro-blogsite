@@ -22,4 +22,6 @@ export default defineConfig({
             redirectToDefaultLocale: true,
         },
     },
+
+    prefetch: true,
 });

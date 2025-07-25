@@ -2,8 +2,7 @@
 import "../styles/global.css";
 import { ModeToggle } from "../components/ModeToggle";
 
-import { ScrollArea } from "../components/ui/scroll-area";
-
+import { ClientRouter } from "astro:transitions";
 const { title, description } = Astro.props;
 
 // processing the title
@@ -23,9 +22,13 @@ if (titleStyled) {
         <meta name="generator" content={Astro.generator} />
         <title>{titleStyled}</title>
         <meta name="description" content={description} />
+        <ClientRouter/>
     </head>
     <body>
-        <div id="header" class="border-b-1 border-dashed">
+        <div
+            id="header"
+            class="flex-nowarp flex w-full min-h-[3vh] content-center items-center justify-between border-b-1 border-dashed p-3"
+        >
             <ModeToggle client:load />
         </div>
         <div
@@ -34,18 +37,12 @@ if (titleStyled) {
         >
             <slot />
         </div>
-        <div id="footer" class="border-t-1 border-dashed"></div>
+        <div id="footer" class="border-t-1 border-dashed">
+            <div
+                id="footer-container"
+                class="mx-auto min-h-[22vh] border-r-1 border-l-1 border-dashed p-2 transition-all sm:w-full md:w-lg lg:w-3xl xl:w-4xl 2xl:w-6xl"
+            >
+            </div>
+        </div>
     </body>
 </html>
-
-<style>
-    #header {
-        padding: 1em;
-        width: 100%;
-        display: flex;
-        flex-wrap: nowrap;
-        align-items: center;
-        justify-content: space-between;
-        align-content: center;
-    }
-</style>

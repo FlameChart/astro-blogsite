@@ -1,11 +1,12 @@
 ---
 import "../styles/global.css";
+
 import { ModeToggle } from "../components/ModeToggle";
 
 import { ClientRouter } from "astro:transitions";
-const { title, description } = Astro.props;
 
 // processing the title
+const { title, description } = Astro.props;
 let titleStyled = title;
 if (titleStyled) {
     titleStyled += " - welki's space";
@@ -22,25 +23,22 @@ if (titleStyled) {
         <meta name="generator" content={Astro.generator} />
         <title>{titleStyled}</title>
         <meta name="description" content={description} />
-        <ClientRouter/>
+        <ClientRouter />
     </head>
     <body>
         <div
             id="header"
-            class="flex-nowarp flex w-full min-h-[3vh] content-center items-center justify-between border-b-1 border-dashed p-3"
         >
             <ModeToggle client:load />
         </div>
         <div
             id="container"
-            class="mx-auto min-h-[70vh] border-r-1 border-l-1 border-dashed p-2 transition-all sm:w-full md:w-lg lg:w-3xl xl:w-4xl 2xl:w-6xl"
         >
             <slot />
         </div>
-        <div id="footer" class="border-t-1 border-dashed">
+        <div id="footer">
             <div
                 id="footer-container"
-                class="mx-auto min-h-[22vh] border-r-1 border-l-1 border-dashed p-2 transition-all sm:w-full md:w-lg lg:w-3xl xl:w-4xl 2xl:w-6xl"
             >
             </div>
         </div>

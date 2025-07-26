@@ -1,9 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single:slnt,wght@-8..0,100..900&family=Fira+Code:wght@300..700');
+@import url('https://fonts.googleapis.cn/css2?family=Bitcount+Prop+Single:slnt,wght@-8..0,100..900&family=Fira+Code:wght@300..700');
 @import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+    --font-fira: "Fira Code", monospace;
+    --font-dotted: "Bitcount Prop Single", system-ui;
     --radius-sm: calc(var(--radius) - 4px);
     --radius-md: calc(var(--radius) - 2px);
     --radius-lg: var(--radius);
@@ -114,6 +118,7 @@
     * {
         @apply border-border outline-ring/50;
     }
+
     body {
         @apply bg-background text-foreground;
     }

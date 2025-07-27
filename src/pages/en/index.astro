@@ -1,5 +1,14 @@
 ---
 import Layouts from "@/layouts/Layouts.astro";
+
+import { ScreenHeightContainer } from "@/components/LayoutComponents";
 ---
 
-<Layouts> hello there. </Layouts>
+<Layouts>
+    <ScreenHeightContainer>
+        <div>
+            <h1>Welcome to Astro Blogsite</h1>
+            <p>This is a simple blogsite built with Astro.</p>
+        </div>
+    </ScreenHeightContainer>
+</Layouts>

@@ -1,8 +1,17 @@
-import { Separator } from "@/components/ui/separator"
-import globalConfig from "@/config/global"
+import { Separator } from "@/components/ui/separator";
+import globalConfig from "@/config/global";
+import { cn } from "@/lib/utils";
+import * as React from "react";
+
 Object.freeze(globalConfig)
 
-export function FooterLinkContainer() {
+export function ScreenHeightContainer({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div className={cn("mx-4 gap-4 p-2 min-h-screen w-full bg-teal-50 dark:bg-zinc-950", className)} {...props} />
+  )
+}
+
+export function FooterLinkContainer({ ...props }: React.ComponentProps<"div">) {
   return (
     <div id="footer-container" className="mx-4 flex flex-1 flex-col items-start justify-center py-2 text-teal-100">
       <p className="font-dotted mt-4 text-[30px]">{globalConfig.siteInfos.siteName} &gt;</p>

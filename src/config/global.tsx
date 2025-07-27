@@ -2,7 +2,7 @@
 // useful if u wanna make changes from my site and make adjustments.
 
 const siteInfos = {
-  siteName: "welkin's space"
+  siteName: "welki's space"
 }
 
 const footerLinkGroups = [

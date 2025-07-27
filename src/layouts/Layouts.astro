@@ -2,7 +2,10 @@
 import "../styles/global.css";
 
 import { ModeToggle } from "@/components/ModeToggle";
-import { FooterLinkContainer } from "@/components/LayoutComponents";
+import { ScreenHeightContainer, FooterLinkContainer } from "@/components/LayoutComponents";
+
+import globalConfig from "@/config/global";
+Object.freeze(globalConfig);
 
 import { ClientRouter } from "astro:transitions";
 
@@ -10,9 +13,9 @@ import { ClientRouter } from "astro:transitions";
 const { title, description } = Astro.props;
 let titleStyled = title;
 if (titleStyled) {
-    titleStyled += " - welki's space";
+    titleStyled += " - " + globalConfig.siteInfos.siteName;
 } else {
-    titleStyled = "welki's space";
+    titleStyled = globalConfig.siteInfos.siteName;
 }
 ---
 
@@ -28,15 +31,15 @@ if (titleStyled) {
     </head>
     <body class="min-h-screen scroll-smooth">
         <div id="header" class="fixed top-0 left-0 w-full backdrop-blur-xl">
-            <div id="header-container" class="mx-4 flex h-12 flex-1 flex-row items-center justify-between p-2">
-                <p class="font-dotted text-[20px]">welki's space</p>
+            <div id="header-container" class="mx-4 flex min-h-12 flex-1 flex-row items-center justify-between p-2">
+                <p class="font-dotted text-[20px]">{globalConfig.siteInfos.siteName}</p>
                 <ModeToggle client:load />
             </div>
         </div>
-        <div id="body" class="min-h-dvh w-full bg-teal-50 py-12 dark:bg-zinc-950">
-            <div id="body-container" class="mx-4 gap-4 p-2">
+        <div id="body" class="min-h-screen w-full bg-teal-50 py-12 dark:bg-zinc-950">
+            <ScreenHeightContainer id="body-container">
                 <slot />
-            </div>
+            </ScreenHeightContainer>
         </div>
         <div id="footer" class="w-full bg-teal-950 dark:bg-zinc-800">
             <FooterLinkContainer />

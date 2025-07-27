@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/Posts.astro
 title: About Comet the Agentic browser by Perplexity
 description: 关于 Comet / Fellou 和一些其他 Agentic Browser 的想法。
 author: Anonym He

@@ -3,7 +3,7 @@ import Layouts from "@/layouts/Layouts.astro";
 
 import { Separator } from "@/components/ui/separator";
 
-const allPosts = Object.values(import.meta.glob("@/post/*.md", { eager: true }));
+const allPosts = Object.values(import.meta.glob("@/pages/post/*.md", { eager: true }));
 const pageTitle = "Posts";
 ---
 

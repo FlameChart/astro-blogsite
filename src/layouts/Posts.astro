@@ -1,6 +1,13 @@
 ---
 import Layouts from "./Layouts.astro";
+
+import { ScreenHeightContainer } from "@/components/LayoutComponents";
+
 const { title, description } = Astro.props;
 ---
 
-<Layouts title={title} description={description} />
+<Layouts title={title} description={description}>
+    <ScreenHeightContainer className="text-warp">
+        <slot />
+    </ScreenHeightContainer>
+</Layouts>

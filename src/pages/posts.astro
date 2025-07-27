@@ -1,0 +1,18 @@
+---
+import Layouts from "@/layouts/Layouts.astro";
+
+import { Separator } from "@/components/ui/separator";
+
+const allPosts = Object.values(import.meta.glob("@/post/*.md", { eager: true }));
+const pageTitle = "Posts";
+---
+
+<Layouts title={pageTitle}>
+    <div class="min-h-screen w-full gap-4 bg-teal-50 px-6 py-2 dark:bg-zinc-950">
+        <h1 class="font-dotted mt-8 text-[80px] leading-[96px]">Posts_</h1>
+        <Separator />
+        <div class="w-full">
+            {allPosts.map((post: any) => <a href={post.url}>{post.frontmatter.title}</a>)}
+        </div>
+    </div>
+</Layouts>

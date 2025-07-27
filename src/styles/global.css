@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single:slnt,wght@-8..0,100..900&family=Fira+Code:wght@300..700');
-@import url('https://fonts.googleapis.cn/css2?family=Bitcount+Prop+Single:slnt,wght@-8..0,100..900&family=Fira+Code:wght@300..700');
+@import url("https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single:slnt,wght@-8..0,100..900&family=Fira+Code:wght@300..700");
+@import url("https://fonts.googleapis.cn/css2?family=Bitcount+Prop+Single:slnt,wght@-8..0,100..900&family=Fira+Code:wght@300..700");
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -125,7 +125,6 @@
 }
 
 @layer utilities {
-
     /* scrollbar hid/show css class */
     /* Ref: https://dev.to/derick1530/how-to-create-scrollable-element-in-tailwind-without-a-scrollbar-4mbd */
     .scrollbar-hidden {

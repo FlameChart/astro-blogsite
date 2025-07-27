@@ -2,22 +2,17 @@
 //
 // Example:
 [
-  {
-    "label": "Run Development Server",
-    "command": "pnpm",
-    "args": [
-      "run",
-      "dev"
-    ],
-    "env": {},
-    "use_new_terminal": false,
-    "allow_concurrent_runs": false,
-    "reveal": "no_focus",
-    "reveal_target": "dock",
-    "hide": "never",
-    "shell": "system",
-    "tags": [
-      "dev", "pnpm"
-    ]
-  }
+    {
+        "label": "Run Development Server",
+        "command": "pnpm",
+        "args": ["run", "dev"],
+        "env": {},
+        "use_new_terminal": false,
+        "allow_concurrent_runs": false,
+        "reveal": "no_focus",
+        "reveal_target": "dock",
+        "hide": "never",
+        "shell": "system",
+        "tags": ["dev", "pnpm"]
+    }
 ]

@@ -2,7 +2,7 @@
 import "../styles/global.css";
 
 import { ModeToggle } from "@/components/ModeToggle";
-import { Separator } from "@/components/ui/separator";
+import { FooterLinkContainer } from "@/components/LayoutComponents";
 
 import { ClientRouter } from "astro:transitions";
 
@@ -26,7 +26,7 @@ if (titleStyled) {
         <meta name="description" content={description} />
         <ClientRouter />
     </head>
-    <body class="min-h-screen">
+    <body class="min-h-screen scroll-smooth">
         <div id="header" class="fixed top-0 left-0 w-full backdrop-blur-xl">
             <div id="header-container" class="mx-4 flex h-12 flex-1 flex-row items-center justify-between p-2">
                 <p class="font-dotted text-[20px]">welki's space</p>
@@ -39,26 +39,7 @@ if (titleStyled) {
             </div>
         </div>
         <div id="footer" class="w-full bg-teal-950 dark:bg-zinc-800">
-            <div id="footer-container" class="mx-4 flex flex-1 flex-col items-start justify-center py-2 text-teal-100">
-                <p class="font-dotted mt-4 text-4xl">welki's space</p>
-                <div id="footer-link" class="my-1 flex flex-1 flex-row gap-4 overflow-y-scroll pb-8">
-                    <div class="font-fira flex w-32 flex-1 flex-col gap-1">
-                        <p class="text-md font-semibold">Space</p>
-                        <Separator />
-                        <a href="/" class="text-sm font-thin">Home</a>
-                        <a href="/blogs" class="text-sm font-thin">Blogs</a>
-                        <a href="/about-me" class="text-sm font-thin">About Me</a>
-                    </div>
-                    <div class="font-fira flex w-32 flex-1 flex-col gap-1">
-                        <p class="text-md font-semibold">Social</p>
-                        <Separator />
-                        <a href="#" class="text-sm font-thin">GitHub</a>
-                        <a href="#" class="text-sm font-thin">LinkedIn</a>
-                    </div>
-                </div>
-                <Separator />
-                <p class="font-fira text-md my-2 leading-5">Copyright &COPY; Anonym He (2023-2025).</p>
-            </div>
+            <FooterLinkContainer />
         </div>
     </body>
 </html>

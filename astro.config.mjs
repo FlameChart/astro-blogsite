@@ -35,7 +35,8 @@ export default defineConfig({
         name: "Fira Code",
         cssVariable: "--google-font-fira-code"
       }
-    ]
+    ],
+    headingIdCompat: true,
   },
 
   prefetch: true,

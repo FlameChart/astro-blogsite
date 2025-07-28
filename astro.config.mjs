@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from "astro/config";
+import { defineConfig, fontProviders } from "astro/config";
 
 import sitemap from "@astrojs/sitemap";
 import mdx from "@astrojs/mdx";
@@ -9,19 +9,34 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
-    vite: {
-        plugins: [tailwindcss()],
-    },
+  vite: {
+    plugins: [tailwindcss()],
+  },
 
-    integrations: [mdx(), sitemap(), react()],
-    i18n: {
-        locales: ["en", "zh"],
-        defaultLocale: "zh",
-        routing: {
-            prefixDefaultLocale: false,
-            redirectToDefaultLocale: true,
-        },
+  integrations: [mdx(), sitemap(), react()],
+  i18n: {
+    locales: ["en", "zh"],
+    defaultLocale: "zh",
+    routing: {
+      prefixDefaultLocale: false,
+      redirectToDefaultLocale: true,
     },
+  },
 
-    prefetch: true,
+  experimental: {
+    fonts: [
+      {
+        provider: fontProviders.google(),
+        name: "Bitcount Single",
+        cssVariable: "--google-font-bitcount-single"
+      },
+      {
+        provider: fontProviders.google(),
+        name: "Fira Code",
+        cssVariable: "--google-font-fira-code"
+      }
+    ]
+  },
+
+  prefetch: true,
 });

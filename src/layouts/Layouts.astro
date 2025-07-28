@@ -8,6 +8,7 @@ import globalConfig from "@/config/global";
 Object.freeze(globalConfig);
 
 import { ClientRouter } from "astro:transitions";
+import { Font } from "astro:assets";
 
 // processing the title
 const { title, description } = Astro.props;
@@ -27,6 +28,8 @@ if (titleStyled) {
         <meta name="generator" content={Astro.generator} />
         <title>{titleStyled}</title>
         <meta name="description" content={description} />
+        <Font cssVariable="--google-font-fira-code" preload />
+        <Font cssVariable="--google-font-bitcount-single" preload />
         <ClientRouter />
     </head>
     <body class="min-h-screen scroll-smooth">

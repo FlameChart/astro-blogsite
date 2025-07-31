@@ -5,7 +5,7 @@ import sitemap from "@astrojs/sitemap";
 import mdx from "@astrojs/mdx";
 import react from "@astrojs/react";
 
-import globalConfig from "@/config/global";
+import globalConfig from "./src/config/global";
 
 import tailwindcss from "@tailwindcss/vite";
 

@@ -5,6 +5,8 @@ import sitemap from "@astrojs/sitemap";
 import mdx from "@astrojs/mdx";
 import react from "@astrojs/react";
 
+import globalConfig from "@/config/global";
+
 import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
@@ -12,6 +14,8 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+
+  site: globalConfig.siteInfos.siteLink,
 
   integrations: [mdx(), sitemap(), react()],
   i18n: {

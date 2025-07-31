@@ -16,6 +16,7 @@ export default defineConfig({
   },
 
   site: globalConfig.siteInfos.siteLink,
+  // base: globalConfig.siteInfos.siteGitHubRepo,
 
   integrations: [mdx(), sitemap(), react()],
   i18n: {

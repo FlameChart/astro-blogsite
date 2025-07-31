@@ -4,7 +4,8 @@
 const siteInfos = {
   siteName: "welki's space",
   siteDescriptions: "a small playground for a boring person.",
-  siteLink: "https://welkin.space"
+  siteLink: "https://welkin.space",
+  siteGitHubRepo: "/astro-blogsite",
 };
 
 const footerLinkGroups = [

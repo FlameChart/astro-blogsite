@@ -1,0 +1,20 @@
+---
+import { Separator } from "@/components/ui/separator";
+
+const { title, url, pubDate, tags } = Astro.props;
+---
+
+<a href={url}>
+    <div class="flex flex-1 flex-col gap-1">
+        <div class="flex-fow flex flex-1 items-center justify-between text-sm text-gray-500">
+            <span>{pubDate.slice(0, 10)}</span>
+            <div id="tagsArea">
+                {tags.map((item) => <span class="ml-1.5">#{item}</span>)}
+            </div>
+        </div>
+        <Separator />
+        <div class="font-fira text-md leading-[18px]">
+            <span class="font-dotted mr-2 text-[20px]">&gt;</span>{title}
+        </div>
+    </div>
+</a>

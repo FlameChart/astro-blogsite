@@ -19,12 +19,14 @@ export function FooterLinkContainer({ ...props }: React.ComponentProps<"div">) {
         id="footer-link"
         className="scrollbar-hidden my-1 flex w-full flex-1 flex-row flex-nowrap gap-4 overflow-x-scroll overflow-y-hidden pr-4 pb-8 leading-4"
       >
-        {globalConfig.footerLinkGroups.map((group) => (
-          <div className={group.groupClass}>
+        {globalConfig.footerLinkGroups.map((group, index) => (
+          <div key={index}
+            className={group.groupClass}>
             <p className="text-md font-semibold">{group.groupName}</p>
             <Separator />
-            {group.groupItems.map((item) => (
-              <a href={item.link} className="text-sm leading-4 font-thin">
+            {group.groupItems.map((item, itemIndex) => (
+              <a key={itemIndex}
+                href={item.link} className="text-sm leading-4 font-thin">
                 {item.name}
               </a>
             ))}
@@ -33,7 +35,7 @@ export function FooterLinkContainer({ ...props }: React.ComponentProps<"div">) {
       </div>
       <Separator />
       <p className="font-fira text-md my-2 mb-8 leading-4">
-        The content provided by © Anonym He in this site is licensed under{" "}
+        Expect as otherwise noted, the content provided by © Anonym He in this site is licensed under{" "}
         <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
         <img
           src="https://mirrors.creativecommons.org/presskit/icons/cc.svg"
